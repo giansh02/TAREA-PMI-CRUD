@@ -3,14 +3,12 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-04-2026 a las 08:57:52
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -22,7 +20,6 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-
 --
 -- Estructura de tabla para la tabla `producto`
 --
@@ -39,14 +36,13 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`id`, `nombre`, `precio`, `estado`) VALUES
-(1, 'ak 47 7ml', 5000.00, 1),
-(2, 'avion f48', 100000.00, 1),
-(3, 'pan chabata', 1.00, 1),
-(4, 'arroz faraon', 5.00, 1),
-(5, 'peluche panda', 100.00, 0);
+(1, 'Laptop HP Pavilion 15',    2800.00, 1),
+(2, 'Monitor LG 24 pulgadas',    650.00, 1),
+(3, 'Teclado Mecánico Redragon', 120.00, 1),
+(4, 'Mouse Logitech MX Master',   85.00, 1),
+(5, 'Auriculares Sony WH-1000',  350.00, 0);
 
 -- --------------------------------------------------------
-
 --
 -- Estructura de tabla para la tabla `usuario`
 --
@@ -60,27 +56,27 @@ CREATE TABLE `usuario` (
 
 --
 -- Volcado de datos para la tabla `usuario`
+-- Claves en texto plano:
+--   Administrador → admin123
+--   Juan Pérez    → juan123
+--   María González→ maria456
+--   Carlos Ramírez→ carlos789
 --
 
 INSERT INTO `usuario` (`id`, `nombre`, `clave`, `estado`) VALUES
-(1, 'Naig tu noe, por acarrearte', '25d55ad283aa400af464c76d713c07ad', 1),
-(2, 'Will Smit', 'a74298e4a259759687e3a5acb2e7ae12', 0),
-(3, 'Albert Eistein', '3d9188577cc9bfe9291ac66b5cc872b7', 0),
-(4, 'Jorge Luna Marron', 'e10adc3949ba59abbe56e057f20f883e', 1);
+(1, 'Gian Sihuayro',   MD5('admin123'), 1),
+(2, 'Juan Pérez',      MD5('juan123'),  1),
+(3, 'María González',  MD5('maria456'), 0),
+(4, 'Carlos Ramírez',  MD5('carlos789'),1);
 
+-- --------------------------------------------------------
 --
 -- Índices para tablas volcadas
 --
 
---
--- Indices de la tabla `producto`
---
 ALTER TABLE `producto`
   ADD PRIMARY KEY (`id`);
 
---
--- Indices de la tabla `usuario`
---
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
 
@@ -88,17 +84,12 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
---
--- AUTO_INCREMENT de la tabla `producto`
---
 ALTER TABLE `producto`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
---
--- AUTO_INCREMENT de la tabla `usuario`
---
 ALTER TABLE `usuario`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
